@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "SQS:SendMessage",
+      "Resource": ${sqsArns},
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:lambda:${region}:${account}:function:${base_name}*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+      ],
+      "Resource": ${sqsArns}
+    }
+  ]
+}

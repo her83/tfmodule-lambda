@@ -1,0 +1,81 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+       "Sid": "CreateLogGroup",
+       "Effect":"Allow",
+       "Action":"logs:CreateLogGroup",
+       "Resource":[
+         "arn:aws:logs:${region}:${account_id}:*"
+       ]
+    },
+    {
+       "Sid": "CreateLogStreamPutEvents",
+       "Effect":"Allow",
+       "Action":[
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:DescribeLogStreams",
+          "logs:DescribeLogGroups"
+       ],
+       "Resource":[
+          "arn:aws:logs:${region}:${account_id}:log-group:/aws/lambda/*",
+          "arn:aws:logs:${region}:${account_id}:log-group:/aws/lambda/*:*:*"
+       ]
+    },
+    {
+      "Sid": "ReadLambdaArtifactBucket",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::${s3_lambda_artifact_bucket}/*",
+        "arn:aws:s3:::${s3_lambda_artifact_bucket}"
+      ]
+    },
+    {
+        "Sid": "LambdaVPCAllow",
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateNetworkInterface",
+            "ec2:DescribeNetworkInterfaces",
+            "ec2:DeleteNetworkInterface"
+        ],
+        "Resource": "*"
+    },
+    {
+      "Sid": "LambdaDLQPermissions",
+      "Effect": "Allow",
+      "Action": [
+          "sqs:SendMessageBatch",
+          "sqs:SendMessage",
+          "sqs:ReceiveMessage",
+          "sqs:DeleteMessage",
+          "sqs:GetQueueAttributes"
+      ],
+      "Resource": "arn:aws:sqs:${region}:${account_id}:${base_name}*"
+    },
+    {
+      "Sid": "SnsSendToCloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:PutMetricFilter",
+          "logs:PutRetentionPolicy"
+      ],
+      "Resource": [
+          "arn:aws:logs:${region}:${account_id}:log-group:sns*"
+      ]
+    },
+    {            
+        "Sid": "LambdaDDBStreamListing",
+        "Effect": "Allow",
+        "Action": "dynamodb:ListStreams",
+        "Resource": "*"        
+    }
+  ]
+}

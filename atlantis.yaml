@@ -1,0 +1,6 @@
+# atlantis.yaml
+version: 3
+projects:
+  - dir: default
+    workspace: default
+    terraform_version: 1.13.0

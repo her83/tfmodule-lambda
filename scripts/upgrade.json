@@ -1,0 +1,204 @@
+{
+    "variables": [
+        {
+            "name": "sid",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'sid' is deprecated in favor of the correct variable 'bid'. Please update your tfvars to use 'bid' and check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "node_name_id",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'node_name_id' is deprecated in favor of the correct variable 'name_node_id'. Please update your tfvars to use 'name_node_id'.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "lambda_list",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'lambda_list' is deprecated in favor of the correct variable 'lambda_map'. Please update your tfvars to use 'lambda_map' and check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "invoke_permission_principal_list",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'invoke_permission_principal_list' is deprecated in favor of the correct variable 'invoke_permission_principal_map'. Please update your tfvars to use 'invoke_permission_principal_map'.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "s3_lambda_artifact_bucket",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 's3_lambda_artifact_bucket' is deprecated in favor of the correct variable 's3_existing_package'. Please update your tfvars to use 's3_existing_package'.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "sns_custom_access_policy_name",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'sns_custom_access_policy_name'. SNS Policy name is now set with naming convention sns_policy_{workspace_name}.json. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "vpc_subnet_ids",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'vpc_subnet_ids'. You can use 'vpc_info' to enable VPC connectivity. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "vpc_security_group_ids",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'vpc_security_group_ids'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_aws_worskpaces_bucket",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_aws_worskpaces_bucket'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_aws_workspaces_account_name",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_aws_workspaces_account_name'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_aws_workspaces_region",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_aws_workspaces_region'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_aws_workspaces_account",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_aws_workspaces_account'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_vpc_workspaces_bucket",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_vpc_workspaces_bucket'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_vpc_workspaces_region",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_vpc_workspaces_region'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_vpc_workspaces_account",
+            "regex": {
+                "type": "present"
+            },
+            "action": "warn",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_vpc_workspaces_account'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_vpc_workspaces_vpc_name",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_vpc_workspaces_vpc_name'. You should use 'vpc_info' to enable VPC connectivity. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "tf_wdpr_vpc_workspaces_path_override",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'tf_wdpr_vpc_workspaces_path_override'. You should use 'vpc_info' to enable VPC connectivity. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name": "vpc_subnet_type",
+            "regex": {
+                "type": "present"
+            },
+            "action": "fail",
+            "msg": "DEPRECATED VARIABLE: The variable 'vpc_subnet_type'. Check INSTRUCTIONS.md for more information.",
+            "min_version": "3.3.5"
+        },
+        {
+            "name" : "use_vpc",
+            "regex" : {
+              "data_type" : "bool"
+            },
+            "action" : "fail",
+            "msg" : "Variable type must be a boolean and be either true or false.  Please update your tfvars file",
+            "min_version" : "3.3.5"
+        }
+    ],
+    "resources": [
+        {
+            "old_name": "aws_iam_policy.ddb_policy[0]]",
+            "new_name": "aws_iam_policy.ddb_policy[\"create\"]",
+            "action": "mv",
+            "msg": "Migrating resource within state file",
+            "min_version": "2.7.0"
+        },
+        {
+            "old_name": "aws_iam_role_policy_attachment.ddb_policy_attachment[0]",
+            "new_name": "aws_iam_role_policy_attachment.ddb_policy_attachment[\"create\"]",
+            "action": "mv",
+            "msg": "Migrating resource within state file",
+            "min_version": "2.7.0"
+        },
+        {
+            "old_name": "consul_key_prefix.lambda_function_conf[\"tokens\"]",
+            "action": "rm",
+            "msg": "Removing consul_key_prefix resource from statefile",
+            "min_version": "4.2.0"
+        }
+    ],
+    "tf_versions": [
+        {
+            "code_min_version": "3.0.0",
+            "tf_min_required": "0.12.00",
+            "msg": "ERROR: You should be on at least v2.7.0 before upgrade to v3. Please run a plan/apply with v2.x and then try again."
+        }
+    ]
+}

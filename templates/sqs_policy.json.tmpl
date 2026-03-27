@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "SQS:SendMessage",
+      "Resource": "arn:aws:sqs:${region}:${account}:${queue_name}",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:sns:${region}:${account}:${base_name}*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "SQS:SendMessage",
+      "Resource": "arn:aws:sqs:${region}:${account}:${queue_name}",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:lambda:${region}:${account}:function:${base_name}*"
+        }
+      }
+    }
+  ]
+}

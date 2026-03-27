@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+                "SNS:Subscribe",
+                "SNS:SetTopicAttributes",
+                "SNS:RemovePermission",
+                "SNS:Receive",
+                "SNS:Publish",
+                "SNS:ListSubscriptionsByTopic",
+                "SNS:GetTopicAttributes",
+                "SNS:DeleteTopic",
+                "SNS:AddPermission"
+      ],
+      "Resource": "arn:aws:sns:${region}:${account}:${base_name}-${topic_name}",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": [ 
+            "arn:aws:lambda:${region}:${account}:function:${base_name}*",
+            "arn:aws:cloudwatch:${region}:${account}:alarm:${base_name}*"]
+        }
+      }
+    }
+  ]
+}
